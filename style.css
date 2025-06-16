@@ -1,0 +1,719 @@
+body {
+  margin: 0;
+  background-color: #f8f5f2;
+  color: #333;
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Playfair Display', serif;
+}
+
+/* === Header Bistrô === */
+.header {
+  background-color: #1a1a1a;
+  border-bottom: 3px solid #892f2f;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo-img {
+  height: 60px;
+  width: auto;
+}
+
+.logo h1 {
+  font-size: 28px;
+  color: white;
+  margin: 0;
+}
+
+.logo h1 span {
+  font-size: 0.7em;
+  color: #d4af37;
+  display: block;
+  font-weight: 300;
+}
+
+.menu-toggle {
+  display: none;
+}
+
+.menu-icon {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.menu-icon span {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  border-radius: 2px;
+}
+
+.nav {
+  display: flex;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-list li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-list li a:hover {
+  color: #d4af37;
+}
+
+.nav-list a.active {
+  color: #d4af37 !important;
+  border-bottom: 2px solid #d4af37;
+}
+
+.nav-list li.highlight a {
+  background-color: #892f2f;
+  padding: 0.5rem 1.5rem;
+  border-radius: 30px;
+  font-weight: 600;
+}
+
+/* === Hero Section === */
+.hero {
+  background-image: url('imagem/bistro.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.hero-text {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  position: relative;
+  z-index: 1;
+  color: white;
+}
+
+.hero-text h2 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin-bottom: 2rem;
+}
+
+.btn-reserva {
+  background-color: #d4af37;
+  color: #1a1a1a;
+  border: none;
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-reserva:hover {
+  background-color: #892f2f;
+  color: white;
+}
+
+/* === Seções === */
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin: 4rem 0 2rem;
+  color: #1a1a1a;
+}
+
+.section-title span {
+  color: #892f2f;
+}
+
+/* === Prato Destaque === */
+.prato-destaque {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  padding: 0 2rem;
+}
+
+.prato-imagem {
+  flex: 1;
+  min-width: 300px;
+  height: 400px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.prato-desc {
+  flex: 1;
+  min-width: 300px;
+  padding: 1rem;
+}
+
+.prato-desc h3 {
+  font-size: 2rem;
+  color: #892f2f;
+  margin-bottom: 1rem;
+}
+
+.prato-desc p {
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.preco {
+  font-size: 1.8rem;
+  color: #d4af37;
+  font-weight: 700;
+}
+
+/* === Menu Cards === */
+.menu-cards {
+  background-color: #1a1a1a;
+  padding: 4rem 2rem;
+  margin-top: 4rem;
+}
+
+.menu-cards .section-title {
+  color: white;
+}
+
+.cards-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 2rem;
+  flex: 1;
+  min-width: 250px;
+  max-width: 350px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.card h4 {
+  color: #892f2f;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.card li {
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px dashed #ddd;
+  font-size: 1.1rem;
+}
+
+.v_executivo {
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #d4af37;
+  text-align: center;
+}
+
+/* === Eventos Bistro === */
+.eventos-bistro {
+  background-color: #ffffff;
+  padding: 3rem 2rem;
+  border-top: 2px solid #892f2f;
+  border-bottom: 2px solid #892f2f;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+.eventos-bistro h3 {
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
+  color: #892f2f;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 1px #ffffff66;
+}
+
+.eventos-bistro ul {
+  border: 3px solid #892f2f;
+  background-color: #1a1a1a;
+  color: white;
+  border-radius: 12px;
+  list-style: none;
+  padding: 2rem;
+  margin: 0 auto;
+  max-width: 600px;
+  text-align: left;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.eventos-bistro ul:hover {
+  transform: scale(1.01);
+}
+
+.eventos-bistro li {
+  font-size: 1.1rem;
+  position: relative;
+  padding-left: 2rem;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #444;
+}
+
+.eventos-bistro li:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.eventos-bistro li::before {
+  content: '🗓️';
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.eventos-bistro li a {
+  color: white;
+  text-decoration: none;
+  display: inline-block;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.eventos-bistro li a:hover {
+  color: #d4af37;
+  transform: translateX(4px);
+  text-decoration: none;
+}
+
+/* === Menu do Cardápio === */
+.menu-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.menu-title {
+  font-family: 'Playfair Display', serif;
+  text-align: center;
+  color: #892f2f;
+  margin: 2rem 0;
+}
+
+.menu-section {
+  margin-bottom: 4rem;
+}
+
+.menu-item {
+  margin-bottom: 2rem;
+}
+
+.item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.description {
+  margin-top: 0.5rem;
+  color: #555;
+}
+
+.menu-item:hover {
+  background: rgba(137, 47, 47, 0.05);
+}
+
+/* === Modo Casal === */
+.modo-casal {
+  padding: auto 4rem 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+#toggleCasal {
+  background-color: #892f2f;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+
+#toggleCasal:hover {
+  background-color: #d4af37;
+  color: #1a1a1a;
+}
+
+#sugestao-chef {
+  background-color: #1a1a1a;
+  color: white;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+#sugestao-chef h2 {
+  font-size: 2.5rem;
+  color: #d4af37;
+  margin-bottom: 2rem;
+}
+
+.sugestao-conteudo {
+  max-width: 600px;
+  margin: 0 auto;
+  background: #292929;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+}
+
+#sugestao-chef h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+#sugestao-chef p {
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
+}
+
+/* Sugestão Chef */
+#sugestao-chef {
+  background-color: #1a1a1a;
+  color: white;
+  padding: 4rem 2rem;
+  text-align: center;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+#sugestao-chef h2 {
+  font-size: 2.5rem;
+  color: #d4af37;
+  margin-bottom: 2rem;
+}
+
+.sugestao-conteudo {
+  max-width: 600px;
+  margin: 0 auto;
+  background: #292929;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+}
+
+#sugestao-chef h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+#sugestao-chef p {
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
+}
+
+#sugestao-chef button {
+  margin-top: 1.5rem;
+  background-color: #d4af37;
+  border: none;
+  color: #1a1a1a;
+  padding: 0.8rem 1.5rem;
+  font-weight: bold;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#sugestao-chef button:hover {
+  background-color: #892f2f;
+  color: white;
+}
+
+/* === Frase do Chef === */
+.frase-chef {
+  background-color: #f8f5f2;
+  padding: 3rem 2rem;
+  text-align: center;
+  font-style: italic;
+  font-size: 1.4rem;
+  color: #333;
+}
+
+.frase-chef blockquote {
+  margin: 0 auto;
+  max-width: 800px;
+  line-height: 1.8;
+}
+
+.frase-chef span {
+  display: block;
+  margin-top: 1rem;
+  font-size: 1rem;
+  font-style: normal;
+  color: #892f2f;
+  font-weight: bold;
+}
+
+/* === Page Eventos === */
+.eventos-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+.intro-eventos {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.intro-eventos .intro-text {
+  font-size: 1.2rem;
+  color: #555;
+  max-width: 600px;
+  margin: 1rem auto;
+}
+
+.lista-eventos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.evento-card {
+  background: #fff;
+  border-left: 6px solid #892f2f;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.evento-card:hover {
+  transform: translateY(-5px);
+}
+
+.evento-card h3 {
+  margin-top: 0;
+  color: #892f2f;
+  font-size: 1.5rem;
+}
+
+.data-evento {
+  color: #d4af37;
+  font-weight: 600;
+  margin: 0.5rem 0;
+}
+
+.descricao-evento {
+  color: #333;
+  line-height: 1.6;
+}
+
+/* === Botão whatsapp === */
+.btn-reserva-evento {
+  display: inline-block;
+  margin-top: 1rem;
+  background-color: #892f2f;
+  color: white;
+  padding: 0.8rem 1.2rem;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: bold;
+  transition: background 0.3s;  
+}
+
+.btn-reserva-evento:hover {
+  background-color: #d4af37;
+  color: #1a1a1a;
+}
+
+
+/* === Footer === */
+.footer {
+  background-color: #1a1a1a;
+  color: white;
+  padding: 4rem 2rem 2rem;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 200px;
+}
+
+.footer-logo {
+  width: 100px;
+  margin-bottom: 1rem;
+}
+
+.footer h3 {
+  color: #d4af37;
+  margin-bottom: 1.5rem;
+  font-size: 1.3rem;
+}
+
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.social-icons img {
+  width: 30px;
+  opacity: 0.8;
+  transition: opacity 0.3s;
+}
+
+.social-icons img:hover {
+  opacity: 1;
+}
+
+.newsletter-form input {
+  width: 200px;
+  padding: 0.8rem;
+  margin-bottom: 0.5rem;
+  border: none;
+  border-radius: 4px;
+}
+
+.newsletter-form button {
+  background-color: #892f2f;
+  color: white;
+  border: none;
+  padding: 0.8rem;
+  width: 225px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.footer-copy {
+  text-align: center;
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid #333;
+  font-size: 0.9rem;
+}
+
+/* === Responsividade === */
+@media (max-width: 768px) {
+  .menu-icon {
+    display: flex;
+  }
+
+  .nav {
+    display: none;
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  .menu-toggle:checked~.nav {
+    display: block;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .nav-list li {
+    padding: 1rem 0;
+    border-top: 1px solid #333;
+  }
+
+  .hero-text h2 {
+    font-size: 2.5rem;
+  }
+
+  .prato-destaque {
+    flex-direction: column;
+  }
+
+  .prato-imagem {
+    height: 300px;
+  }
+}

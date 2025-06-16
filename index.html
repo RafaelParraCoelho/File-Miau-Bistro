@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Filé Miau Bistrô</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- HEADER BISTRÔ -->
+  <header class="header">
+    <div class="container header-container">
+      <div class="logo">
+        <img src="imagem/icons8-cat-100.png" alt="Logo Gato Chef" class="logo-img">
+        <h1>FILÉ MIAU <span>BISTRÔ</span></h1>
+      </div>
+
+      <input type="checkbox" id="menu-toggle" class="menu-toggle">
+      <label for="menu-toggle" class="menu-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+
+      <nav class="nav">
+        <ul class="nav-list">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="cardapio.html">Cardápio</a></li>
+          <li><a href="eventos.html">Eventos</a></li>
+          <li><a href="#">Reserva</a></li>
+          <li><a href="#">Contatos</a></li>
+          <li class="highlight"><a href="#">Delivery</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO IMAGE -->
+  <section class="hero">
+    <div class="hero-text">
+      <h2>GASTRONOMIA COM TOQUE FELINO</h2>
+      <p>Pratos artesanais inspirados na alta cozinha francesa</p>
+      <button class="btn-reserva">FAÇA SUA RESERVA</button>
+    </div>
+  </section>
+
+  <!-- CONTEÚDO PRINCIPAL -->
+  <main>
+    <section class="destaques">
+      <h2 class="section-title">NOSSA <span>ESPECIALIDADE</span></h2>
+      <div class="prato-destaque">
+        <div class="prato-imagem" style="background-image: url('imagem/vin_bistro-3b0cd8c0.jpg');"></div>
+        <div class="prato-desc">
+          <h3>PICANHA "RONRONANTE"</h3>
+          <p>Corte nobre argentino, maturado por 21 dias, servido com purê de aipim trufado e legumes caramelizados.</p>
+          <p class="preco">R$ 129,90</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO DE CARDS (MENU) -->
+    <section class="menu-cards">
+      <h2 class="section-title">MENU <span>EXECUTIVO</span></h2>
+      <div class="cards-container">
+        <div class="card" id="entradas">
+          <h4>ENTRADAS</h4>
+          <ul>
+            <li>Bruschetta do Chef</li>
+            <li>Foie Gras com Geleia</li>
+            <li>Carpaccio de Jacaré</li>
+          </ul>
+        </div>
+        <div class="card" id="principais">
+          <h4>PRINCIPAIS</h4>
+          <ul>
+            <li>Filé Mignon "Miaulado"</li>
+            <li>Risoto Maine Coon</li>
+            <li>Lagosta Thermidor</li>
+          </ul>
+        </div>
+        <div class="card" id="sobremesas">
+          <h4>SOBREMESAS</h4>
+          <ul>
+            <li>Crème Brûlée Felina</li>
+            <li>Petit Gateau "Bigodes"</li>
+            <li>Cheesecake de Maracujá</li>
+          </ul>
+        </div>
+      </div>
+      <p class="v_executivo">R$139,90</p>
+    </section>
+
+    <!-- Seção Eventos do Bistrô -->
+    <section class="eventos-bistro">
+      <h3>Eventos do Bistrô</h3>
+      <ul>
+        <li><a href="eventos.html">Noite da Trufa Negra – 20 de Julho</a></li>
+        <li><a href="#">Jantar com Jazz ao Vivo – Sábado, 22h</a></li>
+        <li><a href="#">Festival de Fondue – todo mês de Julho</a></li>
+        <li><a href="#">Degustação de Vinhos com Sommelier – 5 de A gosto</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <!-- FOOTER BISTRÔ -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-section">
+        <img src="imagem/icons8-cat-100.png" alt="Logo" class="footer-logo">
+        <p>Rua dos Bigodes, 123 - Jardins<br>São Paulo - SP</p>
+      </div>
+      <div class="footer-section">
+        <h3>HORÁRIOS</h3>
+        <p>Terça a Quinta: 18h - 23h<br>Sexta a Domingo: 18h - 2h<br></p>
+      </div>
+      <div class="footer-section">
+        <h3>CONTATO</h3>
+        <p>(11) 9999-9999<br>
+          contato@filemiau.com.br</p>
+        <div class="social-icons">
+          <a href="#"><img src="imagem/icons8-instagram-logo-100.png" alt="Instagram"></a>
+          <a href="#"><img src="imagem/icons8-whatsapp-100.png" alt="WhatsApp"></a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h3>NEWSLETTER</h3>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Seu e-mail">
+          <button type="submit">ASSINAR</button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-copy">
+      <p>&copy; 2025 FILÉ MIAU BISTRÔ. TODOS OS DIREITOS RESERVADOS.</p>
+      <p>Desenvolvido por Rafael Parra Coelho</p>
+    </div>
+  </footer>
+
+  <script src="JS/index.js"></script>
+</body>
+
+</html>

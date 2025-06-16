@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cardápio | Filé Miau Bistrô</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container header-container">
+      <div class="logo">
+        <img src="imagem/icons8-cat-100.png" alt="Logo Gato Chef" class="logo-img">
+        <h1>FILÉ MIAU <span>BISTRÔ</span></h1>
+      </div>
+
+      <input type="checkbox" id="menu-toggle" class="menu-toggle">
+      <label for="menu-toggle" class="menu-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+
+      <nav class="nav">
+        <ul class="nav-list">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="cardapio.html" class="active">Cardápio</a></li>
+          <li><a href="eventos.html">Eventos</a></li>
+          <li><a href="#">Reserva</a></li>
+          <li><a href="#">Contatos</a></li>
+          <li class="highlight"><a href="#">Delivery</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- CONTEÚDO -->
+  <main class="menu-container">
+
+    <!-- Destaque -->
+    <section class="destaques">
+      <h2 class="section-title">PRATO <span>EXCLUSIVO</span></h2>
+      <div class="prato-destaque">
+        <div class="prato-imagem" style="background-image: url('imagem/vin_bistro-3b0cd8c0.jpg');"></div>
+        <div class="prato-desc">
+          <h3>PICANHA "RONRONANTE"</h3>
+          <p>Corte nobre argentino, maturado por 21 dias, servido com purê de aipim trufado e legumes caramelizados.</p>
+          <p class="preco">R$ 129,90</p>
+        </div>
+      </div>
+    </section>
+
+    <!--Modo Casal-->
+
+    <h1 class="menu-title">Cardápio</h1>
+    <div class="modo-casal">
+      <button id="toggleCasal"> Ativar Modo Casal</button>
+    </div>
+
+    <!-- Entradas -->
+    <section class="menu-section">
+      <h2 class="section-title">⋆ Entradas ⋆</h2>
+      <div class="menu-item">
+        <div class="item-header">
+          <h3>Patê "Ronrom"</h3>
+          <span class="price" data-preco="28.9">R$ 28,90</span>
+        </div>
+        <p class="description">Patê de fígado com ervas finas e crostini de pão sourdough</p>
+      </div>
+      <div class="menu-item">
+        <div class="item-header">
+          <h3>Carpaccio de Jacaré</h3>
+          <span class="price" data-preco="42.9">R$ 42,90</span>
+        </div>
+        <p class="description">Finas fatias de jacaré marinadas, com rúcula e lascas de parmesão</p>
+      </div>
+      <div class="menu-item">
+        <div class="item-header">
+          <h3>Bolinho "Bigode"</h3>
+          <span class="price" data-preco="34.9">R$ 34,90</span>
+        </div>
+        <p class="description">Bolinho de carne seca com catupiry e geleia de pimenta</p>
+      </div>
+    </section>
+
+    <!-- Pratos Principais -->
+    <section class="menu-section">
+      <h2 class="section-title">⋆ Pratos Principais ⋆</h2>
+      <div class="menu-item">
+        <div class="item-header">
+          <h3>Picanha "RONRONANTE"</h3>
+          <span class="price" data-preco="129.9">R$ 129,90</span>
+        </div>
+        <p class="description">Corte nobre argentino, maturado por 21 dias, acompanha purê de aipim trufado</p>
+      </div>
+      <div class="menu-item">
+        <div class="item-header">
+          <h3>Risoto Maine Coon</h3>
+          <span class="price" data-preco="89.9">R$ 89,90</span>
+        </div>
+        <p class="description">Cremoso risoto de funghi secchi com toque de limão siciliano</p>
+      </div>
+      <div class="menu-item">
+        <div class="item-header">
+          <h3>Filé "Miaulado"</h3>
+          <span class="price" data-preco="112.9">R$ 112,90</span>
+        </div>
+        <p class="description">Filé mignon envolto em bacon, com redução de vinho tinto e batatas rústicas</p>
+      </div>
+    </section>
+
+    <!-- Sobremesas -->
+    <section class="menu-section">
+      <h2 class="section-title">⋆ Sobremesas ⋆</h2>
+      <div class="menu-item">
+        <div class="item-header">
+          <h3>Crème Brûlée Felina</h3>
+          <span class="price" data-preco="32.9">R$ 32,90</span>
+        </div>
+        <p class="description">Clássico francês com baunilha do Madagascar e crosta de caramelo crocante</p>
+      </div>
+      <div class="menu-item">
+        <div class="item-header">
+          <h3>Petit Gateau "Bigodes"</h3>
+          <span class="price" data-preco="38.9">R$ 38,90</span>
+        </div>
+        <p class="description">Bolinho de chocolate fondant com sorvete de baunilha bourbon</p>
+      </div>
+    </section>
+
+    <!-- Bebidas Não Alcoólicas -->
+    <section class="menu-section">
+      <h2 class="section-title">⋆ Bebidas Não Alcoólicas ⋆</h2>
+      <div class="menu-item">
+        <div class="item-header">
+          <h3>Limonada "Ronronante"</h3>
+          <span class="price" data-preco="18.9">R$ 18,90</span>
+        </div>
+        <p class="description">Limonada siciliana com água de coco e manjericão</p>
+      </div>
+      <div class="menu-item">
+        <div class="item-header">
+          <h3>Chá Gelado "Whiskers"</h3>
+          <span class="price" data-preco="16.9">R$ 16,90</span>
+        </div>
+        <p class="description">Chá preto com pêssego e hortelã</p>
+      </div>
+      <div class="menu-item">
+        <div class="item-header">
+          <h3>Refresco "Paw"</h3>
+          <span class="price" data-preco="14.9">R$ 14,90</span>
+        </div>
+        <p class="description">Água com gás, limão e xarope de flor de sabugueiro</p>
+      </div>
+    </section>
+
+    <!-- Bebidas Alcoólicas -->
+    <section class="menu-section">
+      <h2 class="section-title">⋆ Bebidas Alcoólicas ⋆</h2>
+      <div class="menu-item">
+        <div class="item-header">
+          <h3>Caipirinha "Gatônica"</h3>
+          <span class="price" data-preco="29.9">R$ 29,90</span>
+        </div>
+        <p class="description">Clássica com cachaça envelhecida, lima e twist de gengibre</p>
+      </div>
+      <div class="menu-item">
+        <div class="item-header">
+          <h3>Vinho Tinto "Miau Lot"</h3>
+          <span class="price" data-preco="89.9">R$ 89,90</span>
+        </div>
+        <p class="description">Malbec argentino Reserva 2020, corpo encorpado</p>
+      </div>
+      <div class="menu-item">
+        <div class="item-header">
+          <h3>Cerveja Artesanal "Purr"</h3>
+          <span class="price" data-preco="24.9">R$ 24,90</span>
+        </div>
+        <p class="description">IPA com notas cítricas e floral</p>
+      </div>
+    </section>
+
+    <!-- Sugestão do Chef -->
+    <section id="sugestao-chef">
+      <h2>Sugestão do Chef</h2>
+      <div class="sugestao-conteudo">
+        <h3 id="chef-nome"></h3>
+        <p id="chef-descricao"></p>
+        <p class="preco" id="chef-preco"></p>
+        <button id="nova-sugestao">Ver Outra Sugestão</button>
+      </div>
+    </section>
+
+    <!-- Frase do Chef -->
+    <section class="frase-chef">
+      <blockquote>“Onde há miados, há aroma de vinho e calor de casa.”<br><span>— Chef Sagwa</span></blockquote>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-section">
+        <img src="imagem/icons8-cat-100.png" alt="Logo" class="footer-logo">
+        <p>Rua dos Bigodes, 123 - Jardins<br>São Paulo - SP</p>
+      </div>
+      <div class="footer-section">
+        <h3>Horários</h3>
+        <p>Terça a Quinta: 18h - 23h<br>Sexta Domingo: 18h - 2h</p>
+      </div>
+      <div class="footer-section">
+        <h3>Contato</h3>
+        <p>(11) 9999-9999<br>contato@filemiau.com.br</p>
+      </div>
+    </div>
+    <div class="footer-copy">
+      <p>&copy; 2023 FILÉ MIAU BISTRÔ. TODOS OS DIREITOS RESERVADOS.</p>
+    </div>
+  </footer>
+
+  <script src="JS/cardapio.js"></script>
+</body>
+
+</html>
