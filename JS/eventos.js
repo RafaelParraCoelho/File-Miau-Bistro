@@ -1,65 +1,78 @@
 // === Filtro de Eventos por Mês ou Tipo ===
+document.addEventListener("DOMContentLoaded", () => {
+  const filtro = document.getElementById("filtro");
+  const eventos = document.querySelectorAll(".evento-card");
 
-const filtro = document.getElementById('filtro');
-const card = document.querySelectorAll('.evento-card');
+  // === FILTRO POR TIPO ===
+  filtro.addEventListener("change", () => {
+    const tipoSelecionado = filtro.value;
+    eventos.forEach(evento => {
+      const tipoEvento = evento.dataset.tipo;
+      evento.style.display = (tipoSelecionado === "todos" || tipoEvento === tipoSelecionado)
+        ? "block"
+        : "none";
+    });
+  });
 
-filtro.addEventListener('change', () => {
-  const valor = filtro.value;
-
-  cards.forEach(card => {
-    const titulo = card.querySelector('h3').textContent.toLowerCase();
-    if (valor === 'todos' || titulo.includes(valor)) {
-      card.style.display = 'block';
-    } else {
-      card.style.display = 'none';
-    }
+  // === BOTÕES "VER MAIS" ===
+document.querySelectorAll(".detalhes-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    const detalhes = btn.previousElementSibling;
+    const visivel = detalhes.classList.contains("show");
+    
+    // Alternar classe 'show' nos detalhes
+    detalhes.classList.toggle("show");
+    
+    // Alternar classe 'active' no botão
+    btn.classList.toggle("active");
+    
+    // Mudar texto do botão
+    btn.textContent = visivel ? "Ver mais" : "Ver menos";
+    
+    // Adicionar/remover ícone
+    btn.setAttribute("aria-expanded", !visivel);
   });
 });
 
-// === Botão “Ver Mais Detalhes” para Cada Evento ===
-document.querySelectorAll('.detalhes-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const detalhes = btn.nextElementSibling;
-    detalhes.style.display = detalhes.style.display === 'none' ? 'block' : 'none';
-    btn.textContent = detalhes.style.display === 'none' ? 'Ver mais' : 'Ver menos';
-  });
-});
+  // === DESTACAR O EVENTO MAIS PRÓXIMO ===
+  const hoje = new Date();
+  let menorDiff = Infinity;
+  let proximoEvento = null;
 
-// === Date - destacar o evento mais próximo da data atual ===
-const hoje = new Date();
-let proximoCard = null;
-let menorDiff = Infinity;
+  eventos.forEach(evento => {
+    const dataTexto = evento.querySelector(".data-evento").textContent;
+    const match = dataTexto.match(/(\d{1,2}) de (\w+)/i);
+    if (match) {
+      const dia = parseInt(match[1]);
+      const mesNome = match[2].toLowerCase();
+      const meses = {
+        janeiro: 0, fevereiro: 1, março: 2, abril: 3, maio: 4, junho: 5,
+        julho: 6, agosto: 7, setembro: 8, outubro: 9, novembro: 10, dezembro: 11
+      };
+      const data = new Date(hoje.getFullYear(), meses[mesNome], dia);
+      const diff = data - hoje;
 
-document.querySelectorAll('.evento-card').forEach(card => {
-  const dataTexto = card.querySelector('.data-evento').textContent;
-  const dataMatch = dataTexto.match(/(\d{1,2}) de (\w+)/i);
-
-  if (dataMatch) {
-    const dia = parseInt(dataMatch[1]);
-    const mesNome = dataMatch[2].toLowerCase();
-    const meses = {
-      janeiro: 0, fevereiro: 1, março: 2, abril: 3, maio: 4, junho: 5,
-      julho: 6, agosto: 7, setembro: 8, outubro: 9, novembro: 10, dezembro: 11
-    };
-
-    const dataEvento = new Date(hoje.getFullYear(), meses[mesNome], dia);
-    const diff = dataEvento - hoje;
-
-    if (diff > 0 && diff < menorDiff) {
-      menorDiff = diff;
-      proximoCard = card;
+      if (diff > 0 && diff < menorDiff) {
+        menorDiff = diff;
+        proximoEvento = evento;
+      }
     }
+  });
+
+  if (proximoEvento) {
+    proximoEvento.style.border = "3px solid #d4af37";
+    proximoEvento.style.backgroundColor = "#fff8dc";
   }
 });
 
-// === Efeito de revelação suave ao rolar a página.
+
+// Efeito de destaque para o evento mais próximo
 if (proximoCard) {
   proximoCard.style.border = '3px solid #d4af37';
   proximoCard.style.backgroundColor = '#fff8dc';
 }
 
-const cards = document.querySelectorAll('.evento-card');
-
+// === Efeito de Revelação Suave ao Rolar a Página ===
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -76,8 +89,7 @@ cards.forEach(card => {
   observer.observe(card);
 });
 
-
-// === Automatização Botão
+// === Automatização do Botão de Reserva via WhatsApp ===
 document.querySelectorAll('.evento-card').forEach(card => {
   const titulo = card.querySelector('h3').textContent.trim();
   const link = document.createElement('a');

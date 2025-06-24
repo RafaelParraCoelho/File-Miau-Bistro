@@ -604,6 +604,107 @@ h3 {
   color: #1a1a1a;
 }
 
+/* === Filtro Estilizado === */
+.filtro-eventos {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.filtro-eventos label {
+  font-family: 'Playfair Display', serif;
+  color: #892f2f;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+#filtro {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: #f8f5f2;
+  border: 2px solid #d4af37;
+  border-radius: 30px;
+  padding: 0.6rem 1.5rem;
+  font-family: 'Poppins', sans-serif;
+  color: #1a1a1a;
+  font-size: 1rem;
+  cursor: pointer;
+  background-image: url('data:image/svg+xml;utf8,<svg fill="%23892f2f" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1rem;
+  transition: all 0.3s ease;
+  width: 200px;
+}
+
+#filtro:hover {
+  border-color: #892f2f;
+  box-shadow: 0 0 0 3px rgba(137, 47, 47, 0.1);
+}
+
+#filtro:focus {
+  outline: none;
+  border-color: #892f2f;
+  box-shadow: 0 0 0 3px rgba(137, 47, 47, 0.2);
+}
+
+/* Estilo para as opções */
+#filtro option {
+  background: #f8f5f2;
+  color: #1a1a1a;
+  padding: 0.5rem;
+}
+
+/* === Estilo do Botão Ver Mais === */
+.detalhes-btn {
+  background-color: transparent;
+  color: #892f2f;
+  border: 2px solid #892f2f;
+  padding: 0.5rem 1.2rem;
+  font-weight: 600;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.detalhes-btn:hover {
+  background-color: #892f2f;
+  color: white;
+}
+
+.detalhes-btn::after {
+  content: '↓';
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.detalhes-btn.active::after {
+  transform: rotate(180deg);
+}
+
+.mais-detalhes {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease, padding 0.3s ease;
+  background-color: #f8f5f2;
+  border-radius: 8px;
+  margin-top: 0.5rem;
+}
+
+.mais-detalhes.show {
+  max-height: 200px;
+  padding: 1rem;
+  margin-top: 1rem;
+  border-left: 3px solid #d4af37;
+}
 
 /* === Footer === */
 .footer {

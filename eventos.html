@@ -2,138 +2,144 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eventos | Filé Miau Bistrô</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="imagem/icons8-cat-100.png" type="image/png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap"
-        rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eventos | Filé Miau Bistrô</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="imagem/icons8-cat-100.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap"
+    rel="stylesheet">
 </head>
 
 <body>
 
-    <header class="header">
-        <div class="container header-container">
-            <div class="logo">
-                <img src="imagem/icons8-cat-100.png" alt="Logo Gato Chef" class="logo-img">
-                <h1>FILÉ MIAU <span>BISTRÔ</span></h1>
-            </div>
-            <input type="checkbox" id="menu-toggle" class="menu-toggle">
-            <label for="menu-toggle" class="menu-icon">
-                <span></span><span></span><span></span>
-            </label>
-            <nav class="nav">
-                <ul class="nav-list">
-                    <li><a href="index.html">Início</a></li>
-                    <li><a href="cardapio.html">Cardápio</a></li>
-                    <li><a href="eventos.html" class="active">Eventos</a></li>
-                    <li><a href="#">Reserva</a></li>
-                    <li><a href="#">Contatos</a></li>
-                    <li class="highlight"><a href="#">Delivery</a></li>
-                </ul>
-            </nav>
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container header-container">
+      <div class="logo">
+        <img src="imagem/icons8-cat-100.png" alt="Logo Gato Chef" class="logo-img">
+        <h1>FILÉ MIAU <span>BISTRÔ</span></h1>
+      </div>
+      <input type="checkbox" id="menu-toggle" class="menu-toggle">
+      <label for="menu-toggle" class="menu-icon">
+        <span></span><span></span><span></span>
+      </label>
+      <nav class="nav">
+        <ul class="nav-list">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="cardapio.html">Cardápio</a></li>
+          <li><a href="eventos.html" class="active">Eventos</a></li>
+          <li><a href="reserva.html">Reserva</a></li>
+          <li><a href="contato.html">Contatos</a></li>
+          <li class="highlight"><a href="#">Delivery</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- CONTEÚDO -->
+  <main class="eventos-page">
+    <section class="intro-eventos">
+      <h2 class="section-title">AGENDA <span>GOURMET</span></h2>
+      <p class="intro-text">Experiências exclusivas, menus temáticos e noites inesquecíveis esperam por você.</p>
+    </section>
+
+    <div class="filtro-eventos">
+      <label for="filtro">Filtrar por:</label>
+      <select id="filtro">
+        <option value="todos">Todos</option>
+        <option value="trufas">Trufas</option>
+        <option value="jazz">Jazz</option>
+        <option value="fondue">Fondue</option>
+        <option value="degustacao">Degustação</option>
+      </select>
+    </div>
+
+    <section class="lista-eventos">
+      <div class="evento-card" data-tipo="trufas">
+        <h3>Noite da Trufa Negra</h3>
+        <p class="data-evento">20 de Julho • 19h às 23h</p>
+        <p class="descricao-evento">Menu completo com trufas negras italianas.</p>
+        <div class="mais-detalhes">
+          <p>🍷 Harmonização especial com vinhos franceses</p>
+          <p>🧀 Queijos artesanais selecionados</p>
+          <p>🎁 Sorteio de kit gourmet para os participantes</p>
         </div>
-    </header>
-
-    <main class="eventos-page">
-        <section class="intro-eventos">
-            <h2 class="section-title">AGENDA <span>GOURMET</span></h2>
-            <p class="intro-text">Experiências exclusivas, menus temáticos e noites inesquecíveis esperam por você.</p>
-        </section>
-
-
-        <div class="filtro-eventos">
-            <label for="filtro">Filtrar por:</label>
-            <select id="filtro">
-                <option value="todos">Todos</option>
-                <option value="musica">Jazz</option>
-                <option value="degustacao">Degustação</option>
-                <option value="trufas">Trufas</option>
-                <option value="fondue">Fondue</option>
-            </select>
-        </div>
-
         <button class="detalhes-btn">Ver mais</button>
-        <div class="mais-detalhes" style="display:none;">
-            <p>🍷 Harmonização especial, ambiente decorado tematicamente e sorteios exclusivos.</p>
+        <a href="https://wa.me/5511999999999?text=Olá,+gostaria+de+reservar+para+a+Noite+da+Trufa+Negra+no+Filé+Miau+Bistrô"
+          target="_blank" class="btn-reserva-evento">Reservar via WhatsApp</a>
+      </div>
+
+      <div class="evento-card" data-tipo="jazz">
+        <h3>Jantar com Jazz ao Vivo</h3>
+        <p class="data-evento">22 de Julho • a partir das 21h</p>
+        <p class="descricao-evento">Noite envolvente ao som de jazz e pratos à la carte.</p>
+        <div class="mais-detalhes">
+          <p>🎷 Trio de jazz clássico e bossa nova</p>
+          <p>🍸 Drink exclusivo "Blue Meow"</p>
+          <p>💃 Pista de dança disponível</p>
         </div>
+        <button class="detalhes-btn">Ver mais</button>
+        <a href="https://wa.me/5511999999999?text=Olá,+gostaria+de+reservar+para+o+Jantar+com+Jazz+ao+Vivo+no+Filé+Miau+Bistrô"
+          target="_blank" class="btn-reserva-evento">Reservar via WhatsApp</a>
+      </div>
 
-        <section class="lista-eventos">
-            <div class="evento-card">
-                <h3>Noite da Trufa Negra</h3>
-                <p class="data-evento">20 de Julho • 19h às 23h</p>
-                <p class="descricao-evento">Menu completo com trufas negras italianas, harmonizado com vinho branco
-                    seco.</p>
-                <a class="btn-reserva-evento"
-                    href="https://wa.me/5511999999999?text=Olá,+gostaria+de+reservar+para+a+Noite+da+Trufa+Negra+no+Filé+Miau+Bistrô"
-                    target="_blank">
-                    Reservar vaga via WhatsApp
-                </a>
-            </div>
-
-            <div class="evento-card">
-                <h3>Jantar com Jazz ao Vivo</h3>
-                <p class="data-evento">22 de Julho • a partir das 21h</p>
-                <p class="descricao-evento">Uma noite envolvente ao som de jazz com pratos à la carte e drinks
-                    exclusivos.</p>
-                <a class="btn-reserva-evento"
-                    href="https://wa.me/5511999999999?text=Olá,+gostaria+de+reservar+para+a+Noite+da+Trufa+Negra+no+Filé+Miau+Bistrô"
-                    target="_blank">
-                    Reservar vaga via WhatsApp
-                </a>
-            </div>
-
-            <div class="evento-card">
-                <h3>Festival de Fondue</h3>
-                <p class="data-evento">Julho inteiro • quintas e domingos</p>
-                <p class="descricao-evento">Fondue suíço e de chocolate, servido em ambiente aquecido com lareira
-                    evinho.</p>
-                <a class="btn-reserva-evento"
-                    href="https://wa.me/5511999999999?text=Olá,+gostaria+de+reservar+para+a+Noite+da+Trufa+Negra+no+Filé+Miau+Bistrô"
-                    target="_blank">
-                    Reservar vaga via WhatsApp
-                </a>
-            </div>
-
-            <div class="evento-card">
-                <h3>Degustação de Vinhos com Sommelier</h3>
-                <p class="data-evento">5 de Agosto • 20h</p>
-                <p class="descricao-evento">Evento intimista com sommeliers convidados e rótulos selecionados da França
-                    e Chile.</p>
-                <a class="btn-reserva-evento"
-                    href="https://wa.me/5511999999999?text=Olá,+gostaria+de+reservar+para+a+Noite+da+Trufa+Negra+no+Filé+Miau+Bistrô"
-                    target="_blank">
-                    Reservar vaga via WhatsApp
-                </a>
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-section">
-                <img src="imagem/icons8-cat-100.png" alt="Logo" class="footer-logo">
-                <p>Rua dos Bigodes, 123 - Jardins<br>São Paulo - SP</p>
-            </div>
-            <div class="footer-section">
-                <h3>Horários</h3>
-                <p>Terça a Quinta: 18h - 23h<br>Sexta Domingo: 18h - 2h</p>
-            </div>
-            <div class="footer-section">
-                <h3>Contato</h3>
-                <p>(11) 9999-9999<br>contato@filemiau.com.br</p>
-            </div>
+      <div class="evento-card" data-tipo="fondue">
+        <h3>Festival de Fondue</h3>
+        <p class="data-evento">Julho inteiro • quintas e domingos</p>
+        <p class="descricao-evento">Fondue suíço e de chocolate à vontade.</p>
+        <div class="mais-detalhes">
+          <p>🧀 5 tipos de fondue salgado (queijo, carne, etc.)</p>
+          <p>🍫 3 opções de fondue doce (chocolate branco, meio amargo e especial)</p>
+          <p>🔥 Ambiente com lareira e clima romântico</p>
         </div>
-        <div class="footer-copy">
-            <p>&copy; 2023 FILÉ MIAU BISTRÔ. TODOS OS DIREITOS RESERVADOS.</p>
-        </div>
-    </footer>
+        <button class="detalhes-btn">Ver mais</button>
+        <a href="https://wa.me/5511999999999?text=Olá,+gostaria+de+reservar+para+o+Festival+de+Fondue+no+Filé+Miau+Bistrô"
+          target="_blank" class="btn-reserva-evento">Reservar via WhatsApp</a>
+      </div>
 
-    <script src="JS/eventos,js"></script>
+      <div class="evento-card" data-tipo="degustacao">
+        <h3>Degustação de Vinhos com Sommelier</h3>
+        <p class="data-evento">5 de Agosto • 20h</p>
+        <p class="descricao-evento">Rótulos selecionados da França e Chile.</p>
+        <div class="mais-detalhes">
+          <p>🍇 6 vinhos premium com explicações técnicas</p>
+          <p>🧀 Tabua de queijos artesanais inclusa</p>
+          <p>👔 Dress code elegante</p>
+        </div>
+        <button class="detalhes-btn">Ver mais</button>
+        <a href="https://wa.me/5511999999999?text=Olá,+gostaria+de+reservar+para+a+Degustação+de+Vinhos+com+Sommelier+no+Filé+Miau+Bistrô"
+          target="_blank" class="btn-reserva-evento">Reservar via WhatsApp</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-section">
+        <img src="imagem/icons8-cat-100.png" alt="Logo" class="footer-logo">
+        <p>Rua dos Bigodes, 123 - Jardins<br>São Paulo - SP</p>
+      </div>
+      <div class="footer-section">
+        <h3>Horários</h3>
+        <p>Terça a Quinta: 18h - 23h<br>Sexta a Domingo: 18h - 2h</p>
+      </div>
+      <div class="footer-section">
+        <h3>Contato</h3>
+        <p>(11) 9999-9999<br>contato@filemiau.com.br</p>
+      </div>
+    </div>
+    <div class="footer-copy">
+      <p>&copy; 2025 FILÉ MIAU BISTRÔ. TODOS OS DIREITOS RESERVADOS.</p>
+    </div>
+  </footer>
+
+  <!-- SCRIPT -->
+  <script src="JS/eventos.js"></script>
 </body>
 
 </html>
