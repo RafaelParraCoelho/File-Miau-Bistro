@@ -109,7 +109,7 @@ h3 {
 
 /* === Hero Section === */
 .hero {
-  background-image: url('imagem/bistro.png');
+  background-image: url('imagem/v2-6rb9v-wbgkw.jpg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -178,6 +178,102 @@ h3 {
   color: #892f2f;
 }
 
+/*  === MUsica === */
+.blues-lounge {
+  background: linear-gradient(to right, #271111, #2b1a1a);
+  padding: 4rem 2rem;
+  color: #f8f5f2;
+  border-top: 3px solid #d4af37;
+  border-bottom: 3px solid #d4af37;
+}
+
+.blues-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 2rem;
+}
+
+.blues-texto {
+  flex: 1;
+  min-width: 280px;
+}
+
+.blues-texto h2 {
+  font-size: 2rem;
+  color: #d4af37;
+  margin-bottom: 1rem;
+  font-family: 'Playfair Display', serif;
+}
+
+.blues-texto p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #e6e6e6;
+  margin-bottom: 1.5rem;
+}
+
+.blues-texto audio {
+  width: 100%;
+  max-width: 350px;
+  filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.4));
+  border-radius: 6px;
+}
+
+.blues-imagem {
+  flex: 1;
+  min-width: 280px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gif-pulsando {
+  animation: pulsarSom 3s infinite ease-in-out;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+}
+
+.gif-pulsando img {
+  width: 100%;
+  max-width: 320px;
+  border-radius: 12px;
+}
+
+@keyframes pulsarSom {
+
+  0%,
+  100% {
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+    transform: scale(1);
+  }
+
+  50% {
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.6);
+    transform: scale(1.03);
+  }
+}
+
+@media (max-width: 768px) {
+  .blues-wrapper {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .blues-imagem {
+    order: -1;
+  }
+
+  .blues-texto audio {
+    margin: 0 auto;
+  }
+}
+
+
 /* === Prato Destaque === */
 .prato-destaque {
   max-width: 1200px;
@@ -226,6 +322,8 @@ h3 {
   background-color: #271111;
   padding: 4rem 2rem;
   margin-top: 4rem;
+  border-top: 3px solid #d4af37;
+  border-bottom: 3px solid #d4af37;
 }
 
 .menu-cards .section-title {
@@ -281,14 +379,13 @@ h3 {
   font-weight: 700;
   color: #d4af37;
   text-align: center;
+
 }
 
 /* === Eventos Bistro === */
 .eventos-bistro {
   background-color: #ffffff;
   padding: 3rem 2rem;
-  border-top: 2px solid #892f2f;
-  border-bottom: 2px solid #892f2f;
   text-align: center;
   font-family: 'Poppins', sans-serif;
 }
@@ -596,7 +693,7 @@ h3 {
   text-decoration: none;
   border-radius: 25px;
   font-weight: bold;
-  transition: background 0.3s;  
+  transition: background 0.3s;
 }
 
 .btn-reserva-evento:hover {

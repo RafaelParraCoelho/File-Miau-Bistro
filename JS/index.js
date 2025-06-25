@@ -25,6 +25,20 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
+// ===== Tocar Áudio Blues =====
+document.addEventListener("DOMContentLoaded", () => {
+    const audio = document.getElementById("blues-audio");
+
+    // Tenta tocar o áudio automaticamente
+    audio.volume = 0.5; // volume moderado
+    audio.play().catch(() => {
+      // Se o navegador bloquear, ativa ao clicar no corpo
+      document.body.addEventListener("click", () => {
+        audio.play();
+      }, { once: true });
+    });
+  });
+  
 // ===== Animação dos Cards =====
 const cards = document.querySelectorAll('.card');
 
@@ -75,7 +89,7 @@ if (!document.querySelector('.eventos-bistro')) {
   containerEventos.className = 'eventos-bistro';
 
   let htmlEventos = '<h3>Eventos do Bistrô</h3><ul>';
-    eventos.forEach(ev => {
+  eventos.forEach(ev => {
     htmlEventos += `<li>${ev}</li>`;
   });
   htmlEventos += '</ul>';
