@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  background-color: #f8f5f2;
+  background-color: offwhite;
   color: #333;
   font-family: 'Poppins', sans-serif;
   overflow-x: hidden;
@@ -14,8 +14,8 @@ h3 {
 
 /* === Header Bistrô === */
 .header {
-  background-color: #1a1a1a;
-  border-bottom: 3px solid #892f2f;
+  background-color: #271111;
+  border-bottom: #d4af37 3px solid;
   padding: 1rem 2rem;
   position: sticky;
   top: 0;
@@ -171,7 +171,7 @@ h3 {
   text-align: center;
   font-size: 2.5rem;
   margin: 4rem 0 2rem;
-  color: #1a1a1a;
+  color: #271111;
 }
 
 .section-title span {
@@ -223,7 +223,7 @@ h3 {
 
 /* === Menu Cards === */
 .menu-cards {
-  background-color: #1a1a1a;
+  background-color: #271111;
   padding: 4rem 2rem;
   margin-top: 4rem;
 }
@@ -304,7 +304,7 @@ h3 {
 
 .eventos-bistro ul {
   border: 3px solid #892f2f;
-  background-color: #1a1a1a;
+  background-color: #271111;
   color: white;
   border-radius: 12px;
   list-style: none;
@@ -417,7 +417,7 @@ h3 {
 }
 
 #sugestao-chef {
-  background-color: #1a1a1a;
+  background-color: #271111;
   color: white;
   padding: 4rem 2rem;
   text-align: center;
@@ -451,7 +451,7 @@ h3 {
 
 /* Sugestão Chef */
 #sugestao-chef {
-  background-color: #1a1a1a;
+  background-color: #271111;
   color: white;
   padding: 4rem 2rem;
   text-align: center;
@@ -472,7 +472,7 @@ h3 {
 .sugestao-conteudo {
   max-width: 600px;
   margin: 0 auto;
-  background: #292929;
+  background: #381919;
   padding: 2rem;
   border-radius: 15px;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
@@ -493,7 +493,7 @@ h3 {
   margin-top: 1.5rem;
   background-color: #d4af37;
   border: none;
-  color: #1a1a1a;
+  color: #271111;
   padding: 0.8rem 1.5rem;
   font-weight: bold;
   border-radius: 30px;
@@ -708,7 +708,7 @@ h3 {
 
 /* === Footer === */
 .footer {
-  background-color: #1a1a1a;
+  background-color: #271111;
   color: white;
   padding: 4rem 2rem 2rem;
 }
