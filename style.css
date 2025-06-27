@@ -13,7 +13,6 @@ h3 {
 }
 
 /* === Header Bistrô === */
-/* ===== HEADER & MENU PRINCIPAL ===== */
 .header {
   background-color: #1a0a0a; /* Vinho escuro */
   border-bottom: 2px solid #d4af37;
@@ -331,7 +330,6 @@ h3 {
 }
 
 .blues-imagem {
-  border-radius: 10000px;
   flex: 1;
   min-width: 280px;
   display: flex;
@@ -560,180 +558,356 @@ h3 {
   text-decoration: none;
 }
 
-/* === Menu do Cardápio === */
+/* ===== Page CARDÁPIO ===== */
 .menu-container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
+  background-color: #f8f5f2;
 }
 
 .menu-title {
   font-family: 'Playfair Display', serif;
   text-align: center;
   color: #892f2f;
-  margin: 2rem 0;
+  margin: 2rem 0 3rem;
+  font-size: 3rem;
+  position: relative;
 }
 
+.menu-title::after {
+  content: '';
+  display: block;
+  width: 100px;
+  height: 4px;
+  background: #d4af37;
+  margin: 1rem auto;
+}
+
+/* ===== SEÇÕES DO CARDÁPIO ===== */
 .menu-section {
   margin-bottom: 4rem;
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  border-left: 4px solid #d4af37;
+  transition: transform 0.3s ease;
 }
 
+.menu-section:hover {
+  transform: translateY(-5px);
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  color: #271111;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.section-title::before,
+.section-title::after {
+  content: '•';
+  color: #d4af37;
+  font-size: 1.5rem;
+}
+
+.section-title span {
+  color: #892f2f;
+}
+
+/* ===== ITENS DO CARDÁPIO ===== */
 .menu-item {
   margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px dashed #d4af37;
+  transition: all 0.3s ease;
+}
+
+.menu-item:last-child {
+  border-bottom: none;
+}
+
+.menu-item:hover {
+  background: rgba(212, 175, 55, 0.05);
 }
 
 .item-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.item-header h3 {
+  font-family: 'Playfair Display', serif;
+  color: #271111;
+  font-size: 1.4rem;
+  margin: 0;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.item-header h3::before {
+  content: '🐾';
+  position: absolute;
+  left: 0;
+}
+
+.price {
+  font-family: 'Playfair Display', serif;
+  color: #892f2f;
+  font-size: 1.3rem;
+  font-weight: 700;
 }
 
 .description {
-  margin-top: 0.5rem;
   color: #555;
+  font-style: italic;
+  padding-left: 1.5rem;
+  line-height: 1.6;
 }
 
-.menu-item:hover {
-  background: rgba(137, 47, 47, 0.05);
+/* ===== DESTAQUE DO PRATO ===== */
+.prato-destaque {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  align-items: center;
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  margin-bottom: 4rem;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  border: 1px solid rgba(212, 175, 55, 0.3);
 }
 
-/* === Modo Casal === */
-.modo-casal {
-  padding: auto 4rem 2rem;
-  text-align: center;
+.prato-imagem {
+  flex: 1;
+  min-width: 300px;
+  height: 350px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.prato-desc {
+  flex: 1;
+  min-width: 300px;
+}
+
+.prato-desc h3 {
+  font-family: 'Playfair Display', serif;
+  color: #892f2f;
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.prato-desc h3::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: #d4af37;
+  margin: 1rem 0;
+}
+
+.prato-desc p {
+  line-height: 1.8;
+  color: #555;
   margin-bottom: 2rem;
+}
+
+.preco {
+  font-family: 'Playfair Display', serif;
+  color: #d4af37;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+/* ===== MODO CASAL ===== */
+.modo-casal {
+  text-align: center;
+  margin: 3rem 0;
 }
 
 #toggleCasal {
   background-color: #892f2f;
   color: white;
   border: none;
-  padding: 0.8rem 1.5rem;
-  font-size: 1rem;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
   border-radius: 30px;
   cursor: pointer;
   font-weight: 600;
-  transition: background 0.3s;
+  transition: all 0.3s;
+  box-shadow: 0 4px 8px rgba(137, 47, 47, 0.3);
 }
 
 #toggleCasal:hover {
   background-color: #d4af37;
-  color: #1a1a1a;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(212, 175, 55, 0.4);
 }
 
+/* ===== SUGESTÃO DO CHEF ===== */
 #sugestao-chef {
-  background-color: #1a0a0a;
+  background: linear-gradient(rgba(39, 17, 17, 0.9), rgba(39, 17, 17, 0.9)), 
+              url('imagem/vinho-bg.jpg');
+  background-size: cover;
+  background-position: center;
   color: white;
-  padding: 4rem 2rem;
+  padding: 5rem 2rem;
   text-align: center;
-}
-
-#sugestao-chef h2 {
-  font-size: 2.5rem;
-  color: #d4af37;
-  margin-bottom: 2rem;
-}
-
-.sugestao-conteudo {
-  max-width: 600px;
-  margin: 0 auto;
-  background: #292929;
-  padding: 2rem;
-  border-radius: 15px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
-}
-
-#sugestao-chef h3 {
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
-  color: #fff;
-}
-
-#sugestao-chef p {
-  margin: 0.5rem 0;
-  font-size: 1.1rem;
-}
-
-/* Sugestão Chef */
-#sugestao-chef {
-  background-color: #1a0a0a;
-  color: white;
-  padding: 4rem 2rem;
-  text-align: center;
-  width: 100vw;
+  margin: 4rem 0;
   position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
 }
 
 #sugestao-chef h2 {
+  font-family: 'Playfair Display', serif;
   font-size: 2.5rem;
   color: #d4af37;
   margin-bottom: 2rem;
+  position: relative;
+  display: inline-block;
+}
+
+#sugestao-chef h2::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 3px;
+  background: #d4af37;
+  margin: 1rem auto;
 }
 
 .sugestao-conteudo {
   max-width: 600px;
   margin: 0 auto;
-  background: #381919;
-  padding: 2rem;
+  background: rgba(56, 25, 25, 0.8);
+  padding: 3rem;
   border-radius: 15px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+  border: 1px solid #d4af37;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
 }
 
-#sugestao-chef h3 {
-  font-size: 1.8rem;
+#chef-nome {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  color: #d4af37;
   margin-bottom: 1rem;
-  color: #fff;
 }
 
-#sugestao-chef p {
-  margin: 0.5rem 0;
-  font-size: 1.1rem;
+#chef-descricao {
+  font-style: italic;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
 }
 
-#sugestao-chef button {
-  margin-top: 1.5rem;
+#chef-preco {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  color: white;
+  margin-bottom: 2rem;
+}
+
+#nova-sugestao {
   background-color: #d4af37;
   border: none;
-  color: #1a0a0a;
-  padding: 0.8rem 1.5rem;
+  color: #271111;
+  padding: 1rem 2rem;
   font-weight: bold;
   border-radius: 30px;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: all 0.3s;
+  font-size: 1.1rem;
 }
 
-#sugestao-chef button:hover {
-  background-color: #892f2f;
-  color: white;
+#nova-sugestao:hover {
+  background-color: white;
+  color: #892f2f;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(255,255,255,0.2);
 }
 
-/* === Frase do Chef === */
+/* ===== FRASE DO CHEF ===== */
 .frase-chef {
   background-color: #f8f5f2;
-  padding: 3rem 2rem;
+  padding: 4rem 2rem;
   text-align: center;
-  font-style: italic;
-  font-size: 1.4rem;
-  color: #333;
+  margin-top: 4rem;
+  position: relative;
 }
 
 .frase-chef blockquote {
-  margin: 0 auto;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  color: #271111;
   max-width: 800px;
-  line-height: 1.8;
+  margin: 0 auto;
+  line-height: 1.6;
+  position: relative;
+  padding: 0 2rem;
+}
+
+.frase-chef blockquote::before,
+.frase-chef blockquote::after {
+  content: '"';
+  font-size: 3rem;
+  color: #d4af37;
+  line-height: 0;
+  position: absolute;
+}
+
+.frase-chef blockquote::before {
+  top: 0;
+  left: 0;
+}
+
+.frase-chef blockquote::after {
+  bottom: -1rem;
+  right: 0;
 }
 
 .frase-chef span {
   display: block;
-  margin-top: 1rem;
-  font-size: 1rem;
-  font-style: normal;
+  margin-top: 2rem;
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.5rem;
   color: #892f2f;
   font-weight: bold;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 768px) {
+  .menu-title {
+    font-size: 2.2rem;
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+  }
+  
+  .item-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .prato-destaque {
+    flex-direction: column;
+  }
+  
+  .prato-imagem {
+    height: 250px;
+  }
 }
 
 /* === Page Eventos === */
@@ -985,41 +1159,247 @@ h3 {
   font-size: 0.9rem;
 }
 
-/* === Responsividade === */
+/* ===== RESPONSIVIDADE PARA CELULAR ===== */
 @media (max-width: 768px) {
+  /* Ajustes gerais */
+  body {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  .container {
+    padding: 0 15px;
+  }
+  
+  /* Header mobile */
+  .header {
+    padding: 0.8rem 1rem;
+  }
+  
+  .logo h1 {
+    font-size: 1.5rem;
+  }
+  
+  .logo-img {
+    height: 40px;
+  }
+  
+  /* Menu mobile */
   .menu-icon {
     display: flex;
   }
-
+  
   .nav {
-    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    margin-top: 1rem;
+    height: 100vh;
+    background: rgba(26, 10, 10, 0.98);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    z-index: 999;
   }
-
-  .menu-toggle:checked~.nav {
-    display: block;
+  
+  .menu-toggle:checked ~ .nav {
+    transform: translateX(0);
   }
-
+  
   .nav-list {
     flex-direction: column;
-    gap: 0;
+    gap: 1.5rem;
+    text-align: center;
   }
-
+  
   .nav-list li {
-    padding: 1rem 0;
-    border-top: 1px solid #333;
+    opacity: 0;
+    transform: translateX(20px);
+    transition: all 0.4s ease;
   }
-
+  
+  .menu-toggle:checked ~ .nav .nav-list li {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  
+  .nav-list li:nth-child(1) { transition-delay: 0.1s; }
+  .nav-list li:nth-child(2) { transition-delay: 0.2s; }
+  .nav-list li:nth-child(3) { transition-delay: 0.3s; }
+  .nav-list li:nth-child(4) { transition-delay: 0.4s; }
+  .nav-list li:nth-child(5) { transition-delay: 0.5s; }
+  .nav-list li:nth-child(6) { transition-delay: 0.6s; }
+  
+  /* Hero section */
+  .hero {
+    height: 60vh;
+    background-attachment: scroll;
+  }
+  
+  .hero-text {
+    padding: 1rem;
+    text-align: center;
+  }
+  
   .hero-text h2 {
-    font-size: 2.5rem;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
   }
-
+  
+  .hero-text p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Seção de destaque */
   .prato-destaque {
     flex-direction: column;
+    gap: 1.5rem;
+    padding: 1rem;
   }
-
+  
   .prato-imagem {
-    height: 300px;
+    height: 250px;
+    min-width: 100%;
+  }
+  
+  /* Cards de menu */
+  .cards-container {
+    flex-direction: column;
+  }
+  
+  .card {
+    min-width: 100%;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Seção de eventos */
+  .eventos-bistro ul {
+    padding: 1rem;
+  }
+  
+  .eventos-bistro li {
+    font-size: 1rem;
+    padding-left: 1.5rem;
+  }
+  
+  /* Cardápio */
+  .menu-container {
+    padding: 1rem;
+  }
+  
+  .menu-title {
+    font-size: 2rem;
+    margin: 1rem 0;
+  }
+  
+  .menu-section {
+    padding: 1.5rem;
+  }
+  
+  .section-title {
+    font-size: 1.5rem;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .section-title::before,
+  .section-title::after {
+    display: none;
+  }
+  
+  .item-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .item-header h3 {
+    font-size: 1.2rem;
+    padding-left: 0;
+  }
+  
+  .item-header h3::before {
+    display: none;
+  }
+  
+  .description {
+    padding-left: 0;
+  }
+  
+  /* Sugestão do chef */
+  #sugestao-chef {
+    padding: 3rem 1rem;
+    margin: 2rem 0;
+  }
+  
+  .sugestao-conteudo {
+    padding: 1.5rem;
+  }
+  
+  #chef-nome {
+    font-size: 1.5rem;
+  }
+  
+  /* Footer */
+  .footer-container {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .footer-section {
+    text-align: center;
+  }
+  
+  .social-icons {
+    justify-content: center;
+  }
+  
+  .newsletter-form input,
+  .newsletter-form button {
+    width: 100%;
+  }
+  
+  /* Botões */
+  .btn-reserva,
+  #toggleCasal,
+  #nova-sugestao {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+    display: block;
+  }
+  
+  /* Efeitos de toque */
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+/* Ajustes para telas muito pequenas (até 400px) */
+@media (max-width: 400px) {
+  .hero-text h2 {
+    font-size: 1.8rem;
+  }
+  
+  .menu-title {
+    font-size: 1.8rem;
+  }
+  
+  .section-title {
+    font-size: 1.3rem;
+  }
+  
+  .prato-desc h3 {
+    font-size: 1.5rem;
+  }
+  
+  .frase-chef blockquote {
+    font-size: 1.3rem;
+    padding: 0 1rem;
   }
 }
