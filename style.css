@@ -1261,6 +1261,120 @@ h3 {
   }
 }
 
+/* GALERIA DE EVENTOS */
+.galeria-eventos {
+  max-width: 1200px;
+  margin: 4rem auto;
+  padding: 0 2rem;
+  text-align: center;
+}
+
+.galeria-descricao {
+  color: #555;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.container-galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.item-galeria {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  aspect-ratio: 1 / 1;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.item-galeria:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.item-galeria img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.item-galeria:hover img {
+  transform: scale(1.05);
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(26,10,10,0.9), transparent);
+  color: white;
+  padding: 2rem 1rem 1rem;
+  text-align: left;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.item-galeria:hover .overlay {
+  opacity: 1;
+}
+
+.overlay h3 {
+  font-size: 1.3rem;
+  margin: 0 0 0.5rem;
+  color: #d4af37;
+}
+
+.overlay p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.btn-ver-mais {
+  background-color: transparent;
+  color: #892f2f;
+  border: 2px solid #892f2f;
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s;
+  margin-top: 1rem;
+}
+
+.btn-ver-mais:hover {
+  background-color: #892f2f;
+  color: white;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .container-galeria {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .overlay {
+    padding: 1rem;
+    opacity: 1;
+  }
+  
+  .overlay h3 {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container-galeria {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* ===== FOOTER SOFISTICADO ===== */
 .footer {
   background: linear-gradient(135deg, #1a0a0a, #271111);
