@@ -15,26 +15,26 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // === BOTÕES "VER MAIS" ===
-document.querySelectorAll(".detalhes-btn").forEach(btn => {
-  btn.addEventListener("click", () => {
-    const detalhes = btn.previousElementSibling;
-    const visivel = detalhes.classList.contains("show");
-    
-    // Alternar classe 'show' nos detalhes
-    detalhes.classList.toggle("show");
-    
-    // Alternar classe 'active' no botão
-    btn.classList.toggle("active");
-    
-    // Mudar texto do botão
-    btn.textContent = visivel ? "Ver mais" : "Ver menos";
-    
-    // Adicionar/remover ícone
-    btn.setAttribute("aria-expanded", !visivel);
-  });
-});
+  document.querySelectorAll(".detalhes-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const detalhes = btn.previousElementSibling;
+      const visivel = detalhes.classList.contains("show");
 
-  // === DESTACAR O EVENTO MAIS PRÓXIMO ===
+      // Alternar classe 'show' nos detalhes
+      detalhes.classList.toggle("show");
+
+      // Alternar classe 'active' no botão
+      btn.classList.toggle("active");
+
+      // Mudar texto do botão
+      btn.textContent = visivel ? "Ver mais" : "Ver menos";
+
+      // Adicionar/remover ícone
+      btn.setAttribute("aria-expanded", !visivel);
+    });
+  });
+
+  // DESTACAR O EVENTO MAIS PRÓXIMO 
   const hoje = new Date();
   let menorDiff = Infinity;
   let proximoEvento = null;
@@ -99,4 +99,76 @@ document.querySelectorAll('.evento-card').forEach(card => {
   link.className = 'btn-reserva-evento';
   link.textContent = 'Reservar vaga via WhatsApp';
   card.appendChild(link);
+});
+
+// === Sistema de Comentários e Avaliações ===
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.querySelector('.form-comentario');
+  const listaComentarios = document.querySelector('.lista-comentarios');
+  const estrelasFrente = document.querySelector('.estrelas-frente');
+  const ratingInput = document.getElementById('rating');
+
+  // Sistema de avaliação por estrelas
+  ratingInput.addEventListener('input', () => {
+    const rating = ratingInput.value;
+    const width = `${rating * 20}%`;
+    estrelasFrente.style.width = width;
+  });
+
+  // Carregar comentários salvos
+  function carregarComentarios() {
+    const comentarios = JSON.parse(localStorage.getItem('comentarios_filémiau')) || [];
+    listaComentarios.innerHTML = '';
+    
+    comentarios.forEach(comentario => {
+      const estrelas = '★'.repeat(comentario.avaliacao) + '☆'.repeat(5 - comentario.avaliacao);
+      const dataFormatada = new Date(comentario.data).toLocaleDateString('pt-BR');
+      
+      listaComentarios.innerHTML += `
+        <div class="comentario">
+          <div class="comentario-cabecalho">
+            <span class="comentario-autor">${comentario.nome}</span>
+            <span class="comentario-evento">${comentario.evento}</span>
+          </div>
+          <div class="comentario-avaliacao">${estrelas}</div>
+          <p class="comentario-texto">${comentario.texto}</p>
+          <div class="comentario-data">${dataFormatada}</div>
+        </div>
+      `;
+    });
+  }
+
+  // Enviar novo comentário
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    
+    const novoComentario = {
+      nome: document.getElementById('nome').value,
+      evento: document.getElementById('evento').value,
+      texto: document.getElementById('comentario').value,
+      avaliacao: parseInt(ratingInput.value),
+      data: new Date().toISOString()
+    };
+    
+    // Salvar no localStorage
+    const comentarios = JSON.parse(localStorage.getItem('comentarios_filémiau')) || [];
+    comentarios.unshift(novoComentario); // Adiciona no início
+    localStorage.setItem('comentarios_filémiau', JSON.stringify(comentarios));
+    
+    // Recarregar e limpar formulário
+    carregarComentarios();
+    form.reset();
+    ratingInput.value = 5;
+    estrelasFrente.style.width = '100%';
+    
+    // Feedback visual
+    const btn = document.querySelector('.btn-enviar');
+    btn.textContent = 'Obrigado! 😻';
+    setTimeout(() => {
+      btn.textContent = 'Enviar Comentário 🐱';
+    }, 2000);
+  });
+
+  // Carregar comentários ao abrir a página
+  carregarComentarios();
 });

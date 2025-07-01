@@ -10,6 +10,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
+    href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Playfair+Display:wght@700&display=swap"
+    rel="stylesheet">
+  <link
     href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap"
     rel="stylesheet">
 </head>
@@ -20,7 +23,11 @@
   <header class="header">
     <div class="container header-container">
       <div class="logo">
-        <img src="imagem/icons8-cat-100.png" alt="Logo Gato Chef" class="logo-img">
+        <ul>
+          <li>
+            <a href="index.html"><img src="imagem/icons8-cat-100.png" alt="Logo Gato Chef" class="logo-img"></a>
+          </li>
+        </ul>
         <h1>FILÉ MIAU <span>BISTRÔ</span></h1>
       </div>
       <input type="checkbox" id="menu-toggle" class="menu-toggle">
@@ -113,6 +120,46 @@
         <button class="detalhes-btn">Ver mais</button>
         <a href="https://wa.me/5511999999999?text=Olá,+gostaria+de+reservar+para+a+Degustação+de+Vinhos+com+Sommelier+no+Filé+Miau+Bistrô"
           target="_blank" class="btn-reserva-evento">Reservar via WhatsApp</a>
+      </div>
+    </section>
+    <section class="secao-comentarios">
+      <h3>🐾 Deixe seu comentário sobre nossos eventos</h3>
+
+      <form class="form-comentario">
+        <div class="input-group">
+          <label for="nome">Seu Nome:</label>
+          <input type="text" id="nome" required placeholder="Ex: João Silva">
+        </div>
+
+        <div class="input-group">
+          <label for="evento">Evento Participado:</label>
+          <select id="evento" required>
+            <option value="">Selecione...</option>
+            <option value="Noite da Trufa Negra">Noite da Trufa Negra</option>
+            <option value="Jantar com Jazz">Jantar com Jazz</option>
+            <!-- Adicione outros eventos -->
+          </select>
+        </div>
+
+        <div class="input-group">
+          <label for="comentario">Comentário:</label>
+          <textarea id="comentario" rows="4" required placeholder="Como foi sua experiência?"></textarea>
+        </div>
+
+        <div class="avaliacao">
+          <p>Avaliação:</p>
+          <div class="estrelas">
+            ★★★★★
+            <div class="estrelas-frente">★★★★★</div>
+            <input type="range" id="rating" min="1" max="5" step="1" value="5">
+          </div>
+        </div>
+
+        <button type="submit" class="btn-enviar">Enviar Comentário 🐱</button>
+      </form>
+
+      <div class="lista-comentarios">
+        <!-- Comentários serão carregados aqui -->
       </div>
     </section>
   </main>

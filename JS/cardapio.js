@@ -16,7 +16,7 @@ if (toggleBtn) {
     modoCasalAtivo = !modoCasalAtivo;
     toggleBtn.textContent = modoCasalAtivo
       ? 'Voltar ao Modo Individual'
-      : '👫 Ativar Modo Casal';
+      : 'Ativar Modo Casal';
   });
 }
 
