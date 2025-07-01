@@ -1335,24 +1335,6 @@ h3 {
   font-size: 0.9rem;
 }
 
-.btn-ver-mais {
-  background-color: transparent;
-  color: #892f2f;
-  border: 2px solid #892f2f;
-  padding: 0.8rem 2rem;
-  font-size: 1rem;
-  font-weight: 600;
-  border-radius: 30px;
-  cursor: pointer;
-  transition: all 0.3s;
-  margin-top: 1rem;
-}
-
-.btn-ver-mais:hover {
-  background-color: #892f2f;
-  color: white;
-}
-
 /* Responsivo */
 @media (max-width: 768px) {
   .container-galeria {
