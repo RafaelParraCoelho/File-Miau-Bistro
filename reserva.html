@@ -2,45 +2,162 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reserva | Filé Miau Bistrô</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="imagem/icons8-cat-100.png" type="image/png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap"
-        rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reserva | Filé Miau Bistrô</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="imagem/icons8-cat-100.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Playfair+Display:wght@700&display=swap"
+    rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap"
+    rel="stylesheet">
 </head>
 
 <body>
-    
-    <header class="header">
-        <div class="container header-container">
-            <div class="logo">
-                <img src="imagem/icons8-cat-100.png" alt="Logo Gato Chef" class="logo-img">
-                <h1>FILÉ MIAU <span>BISTRÔ</span></h1>
-            </div>
-            <input type="checkbox" id="menu-toggle" class="menu-toggle">
-            <label for="menu-toggle" class="menu-icon">
-                <span></span><span></span><span></span>
-            </label>
-            <nav class="nav">
-                <ul class="nav-list">
-                    <li><a href="index.html">Início</a></li>
-                    <li><a href="cardapio.html">Cardápio</a></li>
-                    <li><a href="eventos.html">Eventos</a></li>
-                    <li><a href="reserva.html" class="active">Reserva</a></li>
-                    <li><a href="contato.html">Contatos</a></li>
-                    <li class="highlight"><a href="#">Delivery</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
 
-    <footer class="footer">
+  <header class="header">
+    <div class="container header-container">
+      <div class="logo">
+        <img src="imagem/icons8-cat-100.png" alt="Logo Gato Chef" class="logo-img">
+        <h1>FILÉ MIAU <span>BISTRÔ</span></h1>
+      </div>
+      <input type="checkbox" id="menu-toggle" class="menu-toggle">
+      <label for="menu-toggle" class="menu-icon">
+        <span></span><span></span><span></span>
+      </label>
+      <nav class="nav">
+        <ul class="nav-list">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="cardapio.html">Cardápio</a></li>
+          <li><a href="eventos.html">Eventos</a></li>
+          <li><a href="reserva.html" class="active">Reserva</a></li>
+          <li><a href="contato.html">Contatos</a></li>
+          <li class="highlight"><a href="#">Delivery</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main class="reserva-page">
+    <section class="intro-reserva">
+      <h2 class="section-title">FAÇA SUA <span>RESERVA</span></h2>
+      <p class="intro-text">Garanta seu lugar em nosso bistrô para uma experiência gastronômica inesquecível.</p>
+    </section>
+
+    <div class="reserva-container">
+      <div class="reserva-info">
+        <h3>Informações Importantes</h3>
+        <ul>
+          <li>🕒 Horário de funcionamento: Terça a Domingo, das 18h às 23h</li>
+          <li>👥 Capacidade máxima por mesa: 6 pessoas</li>
+          <li>⏳ Reservas com antecedência mínima: 2 horas</li>
+          <li>🐾 Espaço pet-friendly na área externa</li>
+          <li>🎂 Comemorações especiais? Nos avise!</li>
+        </ul>
+
+        <div class="contato-rapido">
+          <h3>Prefere reservar por telefone?</h3>
+          <a href="tel:+5511999999999" class="btn-telefone">(11) 9999-9999</a>
+          <p>Ou pelo WhatsApp:</p>
+          <a href="https://wa.me/5511999999999" class="btn-whatsapp" target="_blank">
+            <img src="imagem/icons8-whatsapp-100.png" alt="WhatsApp"> Reservar via WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <form class="form-reserva" id="formReserva">
+        <div class="form-group">
+          <label for="nome">Nome Completo*</label>
+          <input type="text" id="nome" name="nome" required placeholder="Seu nome">
+        </div>
+
+        <div class="form-group">
+          <label for="email">E-mail*</label>
+          <input type="email" id="email" name="email" required placeholder="seu@email.com">
+        </div>
+
+        <div class="form-group">
+          <label for="telefone">Telefone*</label>
+          <input type="tel" id="telefone" name="telefone" required placeholder="(11) 99999-9999">
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="data">Data*</label>
+            <input type="date" id="data" name="data" required>
+          </div>
+
+          <div class="form-group">
+            <label for="hora">Horário*</label>
+            <select id="hora" name="hora" required>
+              <option value="" disabled selected>Selecione</option>
+              <option value="18:00">18:00</option>
+              <option value="18:30">18:30</option>
+              <option value="19:00">19:00</option>
+              <option value="19:30">19:30</option>
+              <option value="20:00">20:00</option>
+              <option value="20:30">20:30</option>
+              <option value="21:00">21:00</option>
+              <option value="21:30">21:30</option>
+              <option value="22:00">22:00</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="pessoas">Nº de Pessoas*</label>
+            <select id="pessoas" name="pessoas" required>
+              <option value="1">1 pessoa</option>
+              <option value="2" selected>2 pessoas</option>
+              <option value="3">3 pessoas</option>
+              <option value="4">4 pessoas</option>
+              <option value="5">5 pessoas</option>
+              <option value="6">6 pessoas</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="mesa">Tipo de Mesa</label>
+            <select id="mesa" name="mesa">
+              <option value="indiferente">Indiferente</option>
+              <option value="janela">Perto da janela</option>
+              <option value="centro">Área central</option>
+              <option value="intima">Área mais reservada</option>
+              <option value="externa">Área externa</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="observacoes">Observações Especiais</label>
+          <textarea id="observacoes" name="observacoes" rows="3"
+            placeholder="Alergias, comemorações, necessidades especiais..."></textarea>
+        </div>
+
+        <div class="form-checkbox">
+          <input type="checkbox" id="newsletter" name="newsletter" checked>
+          <label for="newsletter">Desejo receber novidades e promoções por e-mail</label>
+        </div>
+
+        <button type="submit" class="btn-reservar">CONFIRMAR RESERVA</button>
+      </form>
+    </div>
+
+    <div class="reserva-confirmacao" id="reservaConfirmacao" style="display: none;">
+      <div class="confirmacao-content">
+        <img src="imagem/icons8-cat-100.png" alt="Gato Chef" class="confirmacao-img">
+        <h3>Reserva Confirmada!</h3>
+        <p id="confirmacaoTexto"></p>
+        <button class="btn-voltar" id="btnNovaReserva">Fazer Nova Reserva</button>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
     <div class="footer-container">
       <div class="footer-section">
         <img src="imagem/icons8-cat-100.png" alt="Logo" class="footer-logo">
@@ -48,7 +165,7 @@
       </div>
       <div class="footer-section">
         <h3>Horários</h3>
-        <p>Terça a Quinta: 18h - 23h<br>Sexta Domingo: 18h - 2h</p>
+        <p>Terça a Quinta: 18h - 23h<br>Sexta a Domingo: 18h - 2h</p>
       </div>
       <div class="footer-section">
         <h3>Contato</h3>
@@ -58,9 +175,28 @@
     <div class="footer-copy">
       <p>&copy; 2023 FILÉ MIAU BISTRÔ. TODOS OS DIREITOS RESERVADOS.</p>
     </div>
-  </footer>
 
-  <script src="JS/cardapio.js"></script>
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-section">
+          <img src="imagem/icons8-cat-100.png" alt="Logo" class="footer-logo">
+          <p>Rua dos Bigodes, 123 - Jardins<br>São Paulo - SP</p>
+        </div>
+        <div class="footer-section">
+          <h3>Horários</h3>
+          <p>Terça a Quinta: 18h - 23h<br>Sexta Domingo: 18h - 2h</p>
+        </div>
+        <div class="footer-section">
+          <h3>Contato</h3>
+          <p>(11) 9999-9999<br>contato@filemiau.com.br</p>
+        </div>
+      </div>
+      <div class="footer-copy">
+        <p>&copy; 2023 FILÉ MIAU BISTRÔ. TODOS OS DIREITOS RESERVADOS.</p>
+      </div>
+    </footer>
+
+    <script src="JS/cardapio.js"></script>
 </body>
 
 </html>
