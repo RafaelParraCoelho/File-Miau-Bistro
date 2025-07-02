@@ -59,7 +59,6 @@ O **Filé Miau Bistrô** é um projeto web focado em treinar habilidades de fron
 ## 🛠️ Em desenvolvimento...
 
 - [ ] Integração com **API de Delivery** fictícia
-- [ ] Sistema de  **Comentários**
 - [ ] Otimizações de performance (compressão de imagens, minificação)
 - [ ] Versão escura ou acessibilidade aprimorada
 
