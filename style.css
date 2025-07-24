@@ -12,6 +12,12 @@ h3 {
   font-family: 'Playfair Display', serif;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
 /* === Header Bistrô === */
 .header {
   background-color: #1a0a0a; /* Vinho escuro */
@@ -345,6 +351,8 @@ h3 {
 }
 
 .gif-pulsando img {
+  max-width: 90%;
+  height: auto;
   width: 100%;
   max-width: 320px;
   border-radius: 12px;
@@ -398,15 +406,20 @@ h3 {
   background-position: center;
   border-radius: 10px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
 }
 
 .prato-desc {
+  font-size: 1.6rem;
   flex: 1;
   min-width: 300px;
   padding: 1rem;
 }
 
 .prato-desc h3 {
+   font-size: 1rem;
   font-size: 2rem;
   color: #892f2f;
   margin-bottom: 1rem;
@@ -1298,9 +1311,10 @@ h3 {
 
 .item-galeria img {
   width: 100%;
-  height: 100%;
+  height: auto;
+  display: block;
   object-fit: cover;
-  transition: transform 0.5s;
+  border-radius: 10px;
 }
 
 .item-galeria:hover img {
@@ -1338,7 +1352,8 @@ h3 {
 /* Responsivo */
 @media (max-width: 768px) {
   .container-galeria {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr !important;
+    padding: 0 1rem;
   }
   
   .overlay {
@@ -1689,6 +1704,12 @@ h3 {
 .btn-enviar:hover {
   transform: translateY(-3px);
   box-shadow: 0 5px 15px rgba(137, 47, 47, 0.3);
+}
+
+.mapa iframe {
+  width: 100%;
+  height: 300px;
+  border-radius: 10px;
 }
 
 /* ===== FOOTER SOFISTICADO ===== */
